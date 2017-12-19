@@ -5,7 +5,7 @@ class UserController < ApplicationController
 
   def create
     @user = User.new
-    if @user.save
+    if @user.save(user_params)
       redirect_to '/'
     else
       @errors = @user.errors.full_messages
